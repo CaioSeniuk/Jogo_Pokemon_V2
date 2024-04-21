@@ -1,13 +1,13 @@
 def introducao():
     import biblioteca_texto,os,time,biblioteca_cores
-    from biblioteca_texto import texto
+    from biblioteca_texto import texto_introducao
     from biblioteca_cores import cor
     time.sleep(0.0001)
     os.system("cls")
-    texto(f"\n{cor.FAIL}Bem-vindo ao mundo de Pokémon!{cor.ENDC}\n")
-    texto(f"\nEste é um lugar especial, onde pessoas como você treinam para se tornar o Mestre Pokémon número 1 do mundo!\n")
-    texto(f"\nMas, o que é um Pokémon?\nOs Pokémons são criaturas incríveis que compartilham o mundo com os seres humanos!\n")
-    texto(f"Atualmente, existem centenas de espécies de Pokémon documentadas.\n\nA sua incrível tarefa é capturar, treinar e lutar com todos eles.\nIsto não é fácil, mas uma vez que você aprenda, saberá exatamente qual Pokémon escolher em uma luta.\n")
+    texto_introducao(f"\n{cor.FAIL}Bem-vindo ao mundo de Pokémon!{cor.ENDC}\n")
+    texto_introducao(f"\nEste é um lugar especial, onde pessoas como você treinam para se tornar o Mestre Pokémon número 1 do mundo!\n")
+    texto_introducao(f"\nMas, o que é um Pokémon?\nOs Pokémons são criaturas incríveis que compartilham o mundo com os seres humanos!\n")
+    texto_introducao(f"Atualmente, existem centenas de espécies de Pokémon documentadas.\n\nA sua incrível tarefa é capturar, treinar e lutar com todos eles.\nIsto não é fácil, mas uma vez que você aprenda, saberá exatamente qual Pokémon escolher em uma luta.\n")
 
 
 
@@ -63,13 +63,57 @@ def deseja_capturar():
  #Função para perguntar onde devemos ir
 def pergunta_fazer():
     import biblioteca_texto, time, biblioteca_cores
-    from biblioteca_texto import texto
+    from biblioteca_texto import texto_introducao
     from biblioteca_cores import cor    
-    texto("\nO que devemos fazer?\n")
-    texto(f"{cor.OKGREEN}1- Entrar na floresta{cor.ENDC}{cor.BOLD}\n2- Entrar na caverna{cor.ENDC}{cor.HEADER}\n3- Ver Pokédex{cor.ENDC}\n4- Sair\n")
-    time.sleep(0.1)
+    texto_introducao("\nO que devemos fazer?\n")
+    texto_introducao(f"{cor.OKGREEN}1- Entrar na floresta{cor.ENDC}{cor.BOLD}\n2- Entrar na caverna{cor.ENDC}{cor.HEADER}\n3- Ver Pokédex{cor.ENDC}\n4- Sair\n")
     return (float(input("\n-> ")))
 
+def saindo_da_caverna():
+    import os, biblioteca_texto, time
+    from biblioteca_texto import texto
+    for i in range(0,2):
+        os.system("cls")
+        texto("\nSaindo da caverna...")
+        time.sleep(1)
+        os.system("cls")
+
+def saindo_da_floresta():
+    import os, biblioteca_texto, time
+    from biblioteca_texto import texto
+    for i in range(0,2):
+        os.system("cls")
+        texto("\nSaindo da floresta...")
+        time.sleep(1)
+        os.system("cls")
+
+
+def saindo_do_jogo():
+    import os, biblioteca_texto,time
+    from biblioteca_texto import texto
+    for i in range(0,2):
+        os.system("cls")
+        texto("\nSaindo do jogo...")
+        time.sleep(1)
+        os.system("cls")
+
+def chance_captura_floresta():
+    import random
+    chance_captura = random.randint(1,100)
+    if 1<=chance_captura<= 50:
+        return 1
+    elif 51<=chance_captura<=100:
+         return 2
+
+def chance_captura_caverna():
+    import random
+    chance_captura = random.randint(1,100)
+    if 1<=chance_captura<= 50:
+        return 1
+    elif 51<=chance_captura<=100:
+         return 2
+    
+    
 
                     
 
