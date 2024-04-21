@@ -46,19 +46,6 @@ def pokemon_porcentagem2():
         return pokemons_caverna[2]
     
 
-#Função para escolher capturar ou não o pókemon
-def deseja_capturar():
-    import biblioteca_texto, os, time
-    from biblioteca_texto import texto
-    while True:
-        texto("\nDeseja capturá-lo?")
-        opcao_capturar = int(input("\n1- Sim\n2- Não\n"))
-        if 1>opcao_capturar<2:
-            os.system("cls")
-            texto("\nErro ! Insira uma opção válida...")
-            time.sleep(1)
-            continue
-
 
  #Função para perguntar onde devemos ir
 def pergunta_fazer():
